@@ -25,12 +25,45 @@ const slides = [
 </script>
 
 <template>
-<vueper-slides>
-    <vueper-slide
-    v-for="(slide, i) in slides"
-    :key="i"
-    :image="slide.image"
-    :title="slide.title"
-    :content="slide.content" />
+<vueper-slides class="no-shadow" autoplay bullets-outside :touchable="false">
+    <vueper-slide v-for="n in 3" :style="'background-color: transparent;'">
+    <template #content>
+      <div class="vueperslide__content-wrapper" style="flex-direction: row">
+        <div class="container">
+          <div class="row" align="center">
+            <div class="col" v-for="n in 3">
+              <div class="card" style="width: 100%;">
+        <img src="../assets/images/pro1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Card title</h5> -->
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+            </div>
+            <!-- <div class="col">
+
+            </div>
+            <div class="col"></div> -->
+          </div>
+        </div>
+        
+      </div>
+    </template>
+    </vueper-slide>
 </vueper-slides>
+
+
 </template>
+
+<style>
+  .vueperslides__bullet .default {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  box-shadow: none;
+  transition: 0.3s;
+  width: 16px;
+  height: 16px;
+}
+
+.vueperslides__bullet--active .default {background-color: #42b983;}
+</style>
