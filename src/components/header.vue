@@ -2,9 +2,12 @@
 </script>
 
 <template>
-<nav id="navbar-example2" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+<nav id="navbar-example2" class="navbar sticky-top navbar-expand-lg " style="background-color: white;">
     <!-- Container wrapper -->
     <div class="container-fluid">
+      <a class="navbar-brand" href="#news">
+    <img src="../assets/images/idea-smile-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="">
+  </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -16,10 +19,10 @@
         <!-- Left links -->
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#news">หน้าหลัก</a>
+            <a class="nav-link" aria-current="page" href="#news" style="font-family: noto-regular; font-size: 20px;">หน้าหลัก</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#service">โปรแกรมทำฟัน</a>
+            <a class="nav-link" aria-current="page" href="#service" style="font-family: noto-regular; font-size: 20px;">บริการ</a>
           </li>
            
               <!-- <li class="nav-item dropdown">
@@ -73,10 +76,10 @@
             
           
           <li class="nav-item">
-            <a href="#doctors" class="nav-link">บุคลากร</a>
+            <a href="#doctors" class="nav-link" style="font-family: noto-regular; font-size: 20px;">คุณหมอ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.google.com/maps/place/%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%84%E0%B8%AD%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B9%84%E0%B8%A1%E0%B8%A5%E0%B9%8C/@14.0224895,100.5262786,17z/data=!3m1!4b1!4m6!3m5!1s0x30e287cecc4f2369:0xa7a49d3db2acbb59!8m2!3d14.0224895!4d100.5262786!16s%2Fg%2F11vskmvq8l?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D">สถานที่</a>
+            <a class="nav-link" target="_blank" style="font-family: noto-regular; font-size: 20px;" href="https://www.google.com/maps/place/%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%84%E0%B8%AD%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B9%84%E0%B8%A1%E0%B8%A5%E0%B9%8C/@14.0224895,100.5262786,17z/data=!3m1!4b1!4m6!3m5!1s0x30e287cecc4f2369:0xa7a49d3db2acbb59!8m2!3d14.0224895!4d100.5262786!16s%2Fg%2F11vskmvq8l?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D">พิกัดคลินิก</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#footer">ติดต่อเรา</a>
@@ -89,3 +92,12 @@
     <!-- Container wrapper -->
   </nav>
 </template>
+
+<style>
+.navbar-nav .nav-link.active{
+  color: #578FCA;  
+}
+.navbar-nav .nav-link:hover {
+  color: #A1E3F9;
+}
+</style>

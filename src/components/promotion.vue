@@ -41,7 +41,7 @@ const slides = [
         <img :src=item.pic_link draggable="false" class="card-img-top" alt="...">
         <div class="card-body">
           <!-- <h5 class="card-title">Card title</h5> -->
-          <a :href=item.info_link target="_blank" class="btn btn-light">อ่านเพิ่มเติม..</a>
+          <a :href=item.info_link target="_blank" class="btn btn-light" style="font-family: noto-regular; color:#3674B5;">อ่านเพิ่มเติม..</a>
         </div>
       </div>
         

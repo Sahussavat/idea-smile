@@ -12,8 +12,9 @@ import Footer from "./footer.vue"
 
 <template v-slot:body>
     <br>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
     <div align="center">
-        <h2 id="news" >ข่าวสาร</h2>
+        <p id="news" style="font-family: noto; font-size: 50px; color: #578FCA;" >ข่าวสาร</p>
     </div>
     <div class="d-flex justify-content-center">
         <div class="w-100">
@@ -21,9 +22,11 @@ import Footer from "./footer.vue"
         </div>
     </div>
     
-    <br>
+    
+    <div style="background-color: #A1E3F9;">
+        <br>
     <div align="center">
-        <h2 id="service" class="fade-in-left">บริการ</h2>
+        <b><p id="service" class="fade-in-left" style="color: black; font-family: noto; font-size: 50px;">บริการ</p></b>
     </div>
     <br>
     <div class="d-flex justify-content-center">
@@ -31,9 +34,10 @@ import Footer from "./footer.vue"
         <Service></Service>
         </div>
     </div>
+    </div>
     <br>
-    <div align="center">
-        <h2 id="doctors" class="fade-in-left">คุณหมอ</h2>
+    <div id="doctors" align="center">
+        <p  class="fade-in-left" style="font-family: noto; font-size: 50px; color: #578FCA;">คุณหมอ</p>
     </div>
     <div class="d-flex justify-content-center">
         <div class="w-100">
@@ -41,6 +45,7 @@ import Footer from "./footer.vue"
         </div>
     </div>
     <br><br><br>
+    </div>
 </template>
 
 <template v-slot:footer>

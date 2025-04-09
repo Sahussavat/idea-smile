@@ -15,8 +15,8 @@
       </div>
             </div>
         </div>
-        <div class="service-row-mini row row-cols-1 fade-in-left" align="center">
-            <div class="col" v-for="n in 6" style="padding: 2%;">
+        <div class="service-row-mini row row-cols-1" align="center">
+            <div class="col fade-in" v-for="n in 6" style="padding: 2%;">
               <div class="card shadow" style="width: 100%;">
                 
         <div class="card-body">
