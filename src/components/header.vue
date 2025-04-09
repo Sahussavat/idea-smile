@@ -78,9 +78,9 @@
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://www.google.com/maps/place/%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%84%E0%B8%AD%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B9%84%E0%B8%A1%E0%B8%A5%E0%B9%8C/@14.0224895,100.5262786,17z/data=!3m1!4b1!4m6!3m5!1s0x30e287cecc4f2369:0xa7a49d3db2acbb59!8m2!3d14.0224895!4d100.5262786!16s%2Fg%2F11vskmvq8l?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D">สถานที่</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#footer">ติดต่อเรา</a>
-          </li>
+          </li> -->
         </ul>
         <!-- Left links -->
       </div>

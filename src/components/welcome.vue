@@ -13,9 +13,8 @@ import Footer from "./footer.vue"
 <template v-slot:body>
     <br>
     <div align="center">
-        <h2 id="news">ข่าวสาร</h2>
+        <h2 id="news" >ข่าวสาร</h2>
     </div>
-    <br>
     <div class="d-flex justify-content-center">
         <div class="w-100">
         <Promotion></Promotion>
@@ -24,7 +23,7 @@ import Footer from "./footer.vue"
     
     <br>
     <div align="center">
-        <h2 id="service">บริการ</h2>
+        <h2 id="service" class="fade-in-left">บริการ</h2>
     </div>
     <br>
     <div class="d-flex justify-content-center">
@@ -34,14 +33,14 @@ import Footer from "./footer.vue"
     </div>
     <br>
     <div align="center">
-        <h2 id="doctors">คุณหมอ</h2>
+        <h2 id="doctors" class="fade-in-left">คุณหมอ</h2>
     </div>
-    <br>
     <div class="d-flex justify-content-center">
         <div class="w-100">
         <Doctors></Doctors>
         </div>
     </div>
+    <br><br><br>
 </template>
 
 <template v-slot:footer>

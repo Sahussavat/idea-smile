@@ -1,5 +1,6 @@
 // import './assets/main.css'
 import './assets/multi_column.css'
+import './assets/transition.min.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import 'vueperslides'
