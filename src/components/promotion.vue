@@ -1,27 +1,5 @@
 <script setup>
 import { VueperSlides, VueperSlide } from 'vueperslides'
-
-const slides = [
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  // Other slides.
-]
 </script>
 
 <template>
@@ -57,6 +35,12 @@ const slides = [
 <script>
 import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 
+function getStringBetween(str, start, end) {
+  const regex = new RegExp(`${start}(.*?)${end}`);
+  const match = str.match(regex);
+  return match ? match[1] : '';
+}
+
 export default {
   data() {
     return {
@@ -65,10 +49,14 @@ export default {
   },
   mounted() {
     const parser = new PublicGoogleSheetsParser('18MRIi6Iya-iZJl12fp_PBreJTHbG18zRXJ0paxdmOjM')
-    console.log(parser)
     parser.parse().then(data => {
       this.items = data
-      console.log(data)
+      var pic_link_pattern = "https://drive.google.com/thumbnail?id=[pic_id]&sz=w1000"
+      for (var i=0;i<this.items.length;i++){
+        var item = this.items[i]
+        var pic_id = item.pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
+        item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
+      }
     })
   },
 }

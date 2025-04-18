@@ -1,33 +1,32 @@
-
-
+<script setup>
+import { VueperSlides, VueperSlide } from 'vueperslides'
+</script>
 
 <template>
-    <div class="container">
-        <div class="service-row-large row row-cols-3 fade-in-left" align="center">
-            <div class="col" v-for="n in 6" style="padding: 2%;">
-              <div class="card shadow" style="width: 100%;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
+  <div style='margin-left: 5%; margin-right: 5%;'>
+    <vueper-slides class="no-shadow"
+  :visible-slides="1"
+  slide-multiple
+  fixed-height="800px"
+  :dragging-distance="100"
+  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
+  bullets-outside :touchable="true">
+    <vueper-slide v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'" style="padding-left: 5%; padding-right: 5%;">
+    <template #content>
+      <div class="container shadow bg-light rounded-3" style="margin-bottom: 2%;" v-for="i in item">
+        <div class="row" align="center" style="padding-top: 1%;">
+          <div class="col">
+            <p style="font-family: noto; font-size: 100%;">{{ i.service_name }}</p>
+          </div>
+          <div class="col">
+            <p style="font-family: noto-regular; font-size: 100%;">{{ i.cost}}</p>
+          </div>
         </div>
       </div>
-            </div>
-        </div>
-        <div class="service-row-mini row row-cols-1" align="center">
-            <div class="col fade-in" v-for="n in 6" style="padding: 2%;">
-              <div class="card shadow" style="width: 100%;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-        </div>
-      </div>
-            </div>
-        </div>
-      </div>
+    </template>
+    </vueper-slide>
+  </vueper-slides>
+</div>
 </template>
 
 <style>
@@ -45,3 +44,34 @@
 
 }
 </style>
+
+<script>
+import PublicGoogleSheetsParser from 'public-google-sheets-parser'
+
+const max_service_per_page = 10
+
+function sort_catalog(old_table){
+  var new_table = []
+  for(var i=0;i < old_table.length ;i++){
+    if (i%max_service_per_page == 0){
+      new_table.push([])
+    }
+    new_table[new_table.length - 1].push(old_table[i])
+  }
+  return new_table
+}
+
+export default {
+  data() {
+    return {
+      items: [],
+    }
+  },
+  mounted() {
+    const parser = new PublicGoogleSheetsParser('1Q2lGyzIJuBX5rdhUVmUbbyqQ1LUrl3Pj5v5ckUIg6AE')
+    parser.parse().then(data => {
+      this.items = sort_catalog(data)
+    })
+  },
+}
+</script>

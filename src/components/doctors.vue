@@ -69,7 +69,12 @@ export default {
     console.log(parser)
     parser.parse().then(data => {
       this.items = data
-      console.log(data)
+      var pic_link_pattern = "https://drive.google.com/thumbnail?id=[pic_id]&sz=w1000"
+      for (var i=0;i<this.items.length;i++){
+        var item = this.items[i]
+        var pic_id = item.pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
+        item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
+      }
     })
   },
 }
