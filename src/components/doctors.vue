@@ -61,7 +61,7 @@ import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 export default {
   data() {
     return {
-      items: [],
+      items: [{},{},{}],
     }
   },
   mounted() {

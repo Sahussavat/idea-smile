@@ -35,19 +35,8 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 <script>
 import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 
-function getStringBetween(str, start, end) {
-  const regex = new RegExp(`${start}(.*?)${end}`);
-  const match = str.match(regex);
-  return match ? match[1] : '';
-}
-
 export default {
   data() {
-    return {
-      items: [],
-    }
-  },
-  mounted() {
     const parser = new PublicGoogleSheetsParser('18MRIi6Iya-iZJl12fp_PBreJTHbG18zRXJ0paxdmOjM')
     parser.parse().then(data => {
       this.items = data
@@ -58,6 +47,9 @@ export default {
         item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
       }
     })
+    return {
+      items: [{},{},{}],
+    }
   },
 }
 </script>

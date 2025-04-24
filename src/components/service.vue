@@ -14,12 +14,12 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     <vueper-slide v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'" style="padding-left: 5%; padding-right: 5%;">
     <template #content>
       <div class="container shadow bg-light rounded-3" style="margin-bottom: 2%;" v-for="i in item">
-        <div class="row" align="center" style="padding-top: 1%;">
-          <div class="col">
-            <p style="font-family: noto; font-size: 100%;">{{ i.service_name }}</p>
+        <div class="row services-row" align="center">
+          <div class="col" align="left">
+            <p style="font-family: noto; font-size: 100%; padding-left: 5%;">{{ i.service_name }}</p>
           </div>
-          <div class="col">
-            <p style="font-family: noto-regular; font-size: 100%;">{{ i.cost}}</p>
+          <div class="col" align="right">
+            <p style="font-family: noto-regular; font-size: 100%; padding-right: 5%;">{{ i.cost}}</p>
           </div>
         </div>
       </div>
@@ -31,15 +31,15 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 
 <style>
 @media only screen and (max-width: 600px) {
-  .service-row-large {
-    display: none;
+  .services-row {
+    padding-top: 5%;
   }
 
 }
 
 @media only screen and (min-width: 992px) {
-  .service-row-mini {
-    display: none;
+  .services-row {
+    padding-top: 1%;
   }
 
 }
@@ -64,13 +64,14 @@ function sort_catalog(old_table){
 export default {
   data() {
     return {
-      items: [],
+      items: [{},{},{}],
     }
   },
   mounted() {
     const parser = new PublicGoogleSheetsParser('1Q2lGyzIJuBX5rdhUVmUbbyqQ1LUrl3Pj5v5ckUIg6AE')
     parser.parse().then(data => {
       this.items = sort_catalog(data)
+      console.log(data)
     })
   },
 }
