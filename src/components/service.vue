@@ -7,7 +7,7 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     <vueper-slides class="no-shadow"
   :visible-slides="1"
   slide-multiple
-  fixed-height="800px"
+  fixed-height="850px"
   :dragging-distance="100"
   :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
   bullets-outside :touchable="true">
@@ -41,6 +41,7 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
   .services-row {
     padding-top: 1%;
   }
+  
 
 }
 </style>
