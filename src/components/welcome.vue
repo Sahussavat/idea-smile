@@ -15,7 +15,7 @@ import BgImg from "./bg_img.vue"
     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
     <BgImg></BgImg>
     <br><br>
-    <div align="center" class="shadow" style="background-color: #ffffff; padding-top: 2%;">
+    <div align="center" class="fade-in shadow" style="background-color: #ffffff; padding-top: 2%;">
         <p id="news" style="font-family: noto; font-size: 100px; color: #578FCA;" >ข่าวสาร</p>
     </div>
     <div class="d-flex justify-content-center">

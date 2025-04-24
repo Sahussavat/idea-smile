@@ -9,9 +9,9 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
   slide-multiple
   fixed-height="850px"
   :dragging-distance="100"
-  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
+  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 1 } }"
   bullets-outside :touchable="true">
-    <vueper-slide v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'" style="padding-left: 5%; padding-right: 5%;">
+    <vueper-slide class="v-slide" v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'">
     <template #content>
       <div class="container shadow bg-light rounded-3" style="margin-bottom: 2%;" v-for="i in item">
         <div class="row services-row" align="center">
@@ -35,6 +35,10 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     padding-top: 5%;
   }
 
+  .v-slide {
+    padding-left: 5%; 
+    padding-right: 5%;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -42,6 +46,10 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     padding-top: 1%;
   }
   
+  .v-slide {
+    padding-left: 25%; 
+    padding-right: 25%;
+  }
 
 }
 </style>

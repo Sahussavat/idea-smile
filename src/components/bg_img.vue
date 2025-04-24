@@ -1,6 +1,6 @@
 
 <template>
-    <div class="d-flex justify-content-center bg-img" style="background-image: url('/idea-smile/src/assets/images/smile-bg.jpg'); background-repeat: no-repeat; background-position-y: 50%; background-position-x: 50%;">
+    <div class="d-flex justify-content-center bg-img" style="background-image: url('smile-bg.jpg'); background-repeat: no-repeat; background-position-y: 50%; background-position-x: 50%;">
 
 </div>
 </template>

@@ -41,9 +41,13 @@ const slides = [
       <div class="vueperslide__content-wrapper" style="flex-direction: row">
         
         <div class="card shadow" style="width: 90%;">
-        <img :src="item.pic_link" class="card-img-top" draggable="false" alt="...">
+        <img :src="item.pic_link" class="card-img-top loaded" draggable="false" style="display: none;" alt="...">
+        <div class="loading" align="center">
+        <div class="spinner-grow" role="status" style="margin: 20%;">
+          <span class="visually-hidden">Loading...</span>
+        </div></div>
         <div class="card-body">
-          <p class="card-text">{{ item.name }}</p>
+          <p class="card-text loaded" style="display: none;">{{ item.name }}</p>
         </div>
       </div>
         
@@ -74,6 +78,15 @@ export default {
         var item = this.items[i]
         var pic_id = item.pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
         item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
+      }
+      var array_l = Array.from(document.getElementsByClassName("loading"))
+      for(let index in array_l){
+        console.log(array_l[index].style.display)
+        array_l[index].style.display = "none"
+      }
+      var array_l = Array.from(document.getElementsByClassName("loaded"))
+      for(let index in array_l){
+        array_l[index].style.display = "block"
       }
     })
   },

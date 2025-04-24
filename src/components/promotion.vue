@@ -16,10 +16,15 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
       <div class="vueperslide__content-wrapper" style="flex-direction: row">
         
         <div class="card shadow" style="width: 90%;">
-        <img :src=item.pic_link draggable="false" class="card-img-top" alt="...">
+        <img :src=item.pic_link draggable="false" class="card-img-top loaded" alt="..." style="display: none;">
+        <div class="loading" align="center">
+        <div class="spinner-grow" role="status" style="margin: 20%;">
+          <span class="visually-hidden">Loading...</span>
+        </div></div>
+        
         <div class="card-body">
           <!-- <h5 class="card-title">Card title</h5> -->
-          <a :href=item.info_link target="_blank" class="btn btn-light" style="font-family: noto-regular; color:#3674B5;">อ่านเพิ่มเติม..</a>
+          <a :href=item.info_link target="_blank" class="btn btn-light loaded" style="display: none; font-family: noto-regular; color:#3674B5;">อ่านเพิ่มเติม..</a>
         </div>
       </div>
         
@@ -45,6 +50,15 @@ export default {
         var item = this.items[i]
         var pic_id = item.pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
         item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
+      }
+      var array_l = Array.from(document.getElementsByClassName("loading"))
+      for(let index in array_l){
+        console.log(array_l[index].style.display)
+        array_l[index].style.display = "none"
+      }
+      var array_l = Array.from(document.getElementsByClassName("loaded"))
+      for(let index in array_l){
+        array_l[index].style.display = "block"
       }
     })
     return {
