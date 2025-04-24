@@ -64,8 +64,12 @@ import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 
 export default {
   data() {
+    let _items = []
+    for(let i=0;i<40;i++){
+      _items.push({})
+    }
     return {
-      items: [{},{},{}],
+      items: _items,
     }
   },
   mounted() {
@@ -78,15 +82,6 @@ export default {
         var item = this.items[i]
         var pic_id = item.pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
         item.pic_link = pic_link_pattern.replace("[pic_id]", pic_id)
-      }
-      var array_l = Array.from(document.getElementsByClassName("loading"))
-      for(let index in array_l){
-        console.log(array_l[index].style.display)
-        array_l[index].style.display = "none"
-      }
-      var array_l = Array.from(document.getElementsByClassName("loaded"))
-      for(let index in array_l){
-        array_l[index].style.display = "block"
       }
     })
   },

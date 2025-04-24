@@ -80,7 +80,6 @@ export default {
     const parser = new PublicGoogleSheetsParser('1Q2lGyzIJuBX5rdhUVmUbbyqQ1LUrl3Pj5v5ckUIg6AE')
     parser.parse().then(data => {
       this.items = sort_catalog(data)
-      console.log(data)
     })
   },
 }
