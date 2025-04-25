@@ -27,8 +27,8 @@ import Map from "./map.vue"
     
     <div style="background-color: #A1E3F9;">
         <br>
-    <div align="center" class="shadow" style="padding-top: 2%;">
-        <b><p id="service" class="fade-in" style="color: #3674B5; font-family: noto; font-size: 100px;">บริการ</p></b>
+    <div align="center" class="fade-in shadow" style="padding-top: 2%;">
+        <b><p id="service" style="color: #3674B5; font-family: noto; font-size: 100px;">บริการ</p></b>
     </div>
     <br>
     <div class="d-flex justify-content-center">
@@ -38,8 +38,8 @@ import Map from "./map.vue"
     </div>
     </div>
     <br>
-    <div id="doctors" align="center" class="shadow" style="padding-top: 2%;">
-        <p  class="fade-in" style="font-family: noto; font-size: 100px; color: #578FCA;">คุณหมอ</p>
+    <div id="doctors" align="center" class="fade-in shadow" style="padding-top: 2%;">
+        <p style="font-family: noto; font-size: 100px; color: #578FCA;">คุณหมอ</p>
     </div>
     <div class="d-flex justify-content-center">
         <div class="w-100">
@@ -47,8 +47,8 @@ import Map from "./map.vue"
         </div>
     </div>
     <br>
-    <div id="map" align="center" class="shadow" style="padding-top: 2%;">
-        <p  class="fade-in" style="font-family: noto; font-size: 100px; color: #578FCA;">พิกัด</p>
+    <div id="map" align="center" class="fade-in shadow" style="padding-top: 2%;">
+        <p style="font-family: noto; font-size: 100px; color: #578FCA;">พิกัด</p>
     </div>
     <div class="d-flex justify-content-center">
         <div class="w-100">
