@@ -24,7 +24,7 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
         <div class="card-body loaded">
           <p class="card-title" style="color: #3674B5; font-family: noto-regular; font-size: 20px;">{{ item.name }}</p>
           <hr class="hr hr-blurry" />
-          <p class="card-text" align="left" style="white-space: pre; color: #3674B5; font-family: noto-regular; font-size: 15px;">
+          <p class="card-text" align="left" style="white-space: pre; color: #3674B5; font-family: noto-regular;">
             {{ item.detail }}
           </p>
         </div>
@@ -37,6 +37,22 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 </div>
 
 </template>
+
+<style>
+@media only screen and (max-width: 600px) {
+  .card-text {
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .card-text {
+    font-size: 15px;
+  }
+
+}
+</style>
 
 <script>
 import PublicGoogleSheetsParser from 'public-google-sheets-parser'
