@@ -6,7 +6,7 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <a class="navbar-brand" href="#news">
-    <img src="../assets/images/idea-smile-logo.jpg" width="100" height="100" class="d-inline-block align-top" alt="">
+    <img src="../assets/images/idea-smile-logo.jpg" draggable="false" width="100" height="100" class="d-inline-block align-top" alt="">
   </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
