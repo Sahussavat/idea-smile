@@ -22,7 +22,7 @@ import Header from "./header.vue"
   opacity: 0;
   animation: fade-in linear forwards;
   animation-timeline: view();
-  animation-range: entry 100px;
+  animation-range: entry 150px;
 }
 
 .fade-in-left{

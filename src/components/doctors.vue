@@ -1,27 +1,5 @@
 <script setup>
 import { VueperSlides, VueperSlide } from 'vueperslides'
-
-const slides = [
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  {
-    title: 'El Teide Volcano, Spain',
-    content: 'Photo by Max Rive',
-    // You can also provide a URL for the image.
-    image: "https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800"
-  },
-  // Other slides.
-]
 </script>
 
 <template>
@@ -29,7 +7,7 @@ const slides = [
 <vueper-slides class="no-shadow fade-in"
   :visible-slides="3"
   slide-multiple
-  fixed-height="500px"
+  fixed-height="800px"
   :dragging-distance="100"
   :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
    autoplay bullets-outside :touchable="true">
@@ -43,9 +21,13 @@ const slides = [
         <div class="spinner-grow" role="status" style="margin: 20%;">
           <span class="visually-hidden">Loading...</span>
         </div></div>
-        <!-- <div class="card-body">
-          <p class="card-text loaded" style="display: none;">{{ item.name }}</p>
-        </div> -->
+        <div class="card-body loaded">
+          <p class="card-title" style="color: #3674B5; font-family: noto-regular; font-size: 20px;">{{ item.name }}</p>
+          <hr class="hr hr-blurry" />
+          <p class="card-text" align="left" style="white-space: pre; color: #3674B5; font-family: noto-regular; font-size: 15px;">
+            {{ item.detail }}
+          </p>
+        </div>
       </div>
         
       </div>
@@ -62,7 +44,7 @@ import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 export default {
   data() {
     let _items = []
-    for(let i=0;i<40;i++){
+    for(let i=0;i<20;i++){
       _items.push({})
     }
     return {
@@ -71,9 +53,9 @@ export default {
   },
   mounted() {
     const parser = new PublicGoogleSheetsParser('1Hb3lPDY23uNcz_oIpz54K5r8yWLh9hmSmunbbKnvA4g')
-    console.log(parser)
     parser.parse().then(data => {
       this.items = data
+      console.log(this.items)
       var pic_link_pattern = "https://drive.google.com/thumbnail?id=[pic_id]&sz=w1000"
       for (var i=0;i<this.items.length;i++){
         var item = this.items[i]
