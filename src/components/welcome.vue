@@ -5,7 +5,7 @@ import Service from "./service.vue"
 import Doctors from "./doctors.vue"
 import Footer from "./footer.vue"
 import BgImg from "./bg_img.vue"
-
+import Map from "./map.vue"
 </script>
 
 <template>
@@ -46,7 +46,15 @@ import BgImg from "./bg_img.vue"
         <Doctors></Doctors>
         </div>
     </div>
-    
+    <br>
+    <div id="map" align="center" class="shadow" style="padding-top: 2%;">
+        <p  class="fade-in-left" style="font-family: noto; font-size: 100px; color: #578FCA;">พิกัด</p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="w-100">
+        <Map></Map>
+        </div>
+    </div>
     <br><br><br>
     </div>
 </template>

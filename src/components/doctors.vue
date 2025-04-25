@@ -27,12 +27,9 @@ const slides = [
 <template>
   <div style="margin-left: 5%; margin-right: 5%;">
 <vueper-slides class="no-shadow fade-in"
-  :visible-slides="4"
+  :visible-slides="3"
   slide-multiple
   fixed-height="500px"
-  fixed-width="90%"
-  :gap="1"
-  :slide-ratio="1 / 4"
   :dragging-distance="100"
   :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
    autoplay bullets-outside :touchable="true">
@@ -41,14 +38,14 @@ const slides = [
       <div class="vueperslide__content-wrapper" style="flex-direction: row">
         
         <div class="card shadow" style="width: 90%;">
-        <img :src="item.pic_link" class="card-img-top loaded" draggable="false" style="display: none;" alt="...">
+        <img :src="item.pic_link" class="card-img-top loaded rounded-3" draggable="false" style="display: none;" alt="...">
         <div class="loading" align="center">
         <div class="spinner-grow" role="status" style="margin: 20%;">
           <span class="visually-hidden">Loading...</span>
         </div></div>
-        <div class="card-body">
+        <!-- <div class="card-body">
           <p class="card-text loaded" style="display: none;">{{ item.name }}</p>
-        </div>
+        </div> -->
       </div>
         
       </div>
