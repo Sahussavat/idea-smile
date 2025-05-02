@@ -25,10 +25,14 @@ import Map from "./map.vue"
     </div>
     
     
-    <div style="background-color: #A1E3F9;">
+    <div style="background-image: linear-gradient(
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.4)
+        ), url('smile-bg.jpg'); background-repeat: no-repeat; background-position-y: 50%; background-position-x: 50%;
+    background-size: auto;">
         <br>
-    <div align="center" class="fade-in shadow" style="padding-top: 2%;">
-        <b><p id="service" style="color: #3674B5; font-family: noto; font-size: 100px;">บริการ</p></b>
+    <div align="center" class="shadow" style="padding-top: 2%; background-color: #393E46;">
+        <b><p id="service" style="color: #DFD0B8; font-family: noto; font-size: 100px;">บริการ</p></b>
     </div>
     <br>
     <div class="d-flex justify-content-center">

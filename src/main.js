@@ -16,5 +16,4 @@ import VueAxios from 'vue-axios'
 
 
 const app = createApp(App)
-
 app.use(router).use(VueAxios, axios).mount('#app')

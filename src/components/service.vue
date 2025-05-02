@@ -4,16 +4,17 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 
 <template>
   <div style='margin-left: 5%; margin-right: 5%;'>
-    <vueper-slides class="no-shadow"
+    <vueper-slides class="no-shadow service-slide"
   :visible-slides="1"
   slide-multiple
-  fixed-height="850px"
+  fixed-height="800px"
   :dragging-distance="100"
-  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 1 } }"
+  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 1},}"
   bullets-outside :touchable="true">
     <vueper-slide class="v-slide" v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'">
     <template #content>
-      <div class="container shadow bg-light rounded-3" style="margin-bottom: 2%;" v-for="i in item">
+      <div class="vueperslide__content-wrapper" style="flex-direction: column">
+      <div class="container bg-light rounded-3" style="margin-bottom: 2%;" v-for="i in item">
         <div class="row services-row" align="center">
           <div class="col" align="left">
             <p style="font-family: noto; font-size: 100%; padding-left: 5%;">{{ i.service_name }}</p>
@@ -23,6 +24,7 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
           </div>
         </div>
       </div>
+    </div>
     </template>
     </vueper-slide>
   </vueper-slides>
@@ -39,6 +41,10 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     padding-left: 5%; 
     padding-right: 5%;
   }
+  .service-slide .vueperslides__bullet .default {background-color: #FFECDB;
+  border: none;
+  box-shadow: none;}
+.service-slide .vueperslides__bullet--active .default {background-color: #60B5FF;}
 }
 
 @media only screen and (min-width: 992px) {
@@ -51,6 +57,10 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     padding-right: 25%;
   }
 
+  .service-slide .vueperslides__bullet .default {background-color: #FFECDB;
+  border: none;
+  box-shadow: none;}
+.service-slide .vueperslides__bullet--active .default {background-color: #60B5FF;}
 }
 </style>
 

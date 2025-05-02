@@ -1,5 +1,20 @@
 <script setup>
 import { VueperSlides, VueperSlide } from 'vueperslides'
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import Album from './album.vue';
+import '@splidejs/vue-splide/css';
+
+const slides = [
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+  {src: "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000", alt:"test1"},
+]
 </script>
 
 <template>
@@ -9,7 +24,8 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
   slide-multiple
   fixed-height="600px"
   :dragging-distance="100"
-  :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 2 } }"
+  :breakpoints="{ 
+    800: { visibleSlides: 1, slideMultiple: 2 }}"
    autoplay bullets-outside :touchable="true">
     <vueper-slide v-for="(item, index) in items" :key="index" :style="'background-color: transparent;'">
     <template #content>
@@ -34,9 +50,24 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
     </vueper-slide>
   </vueper-slides>
   </div>
-
+  <Album></Album>
 </template>
 
+<style>
+@media only screen and (max-width: 600px) {
+  .splide-main-img {
+    width: 90%;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .splide-main-img {
+    width: 40%;
+  }
+
+}
+</style>
 
 <script>
 import PublicGoogleSheetsParser from 'public-google-sheets-parser'
@@ -74,4 +105,5 @@ export default {
     
   },
 }
+
 </script>

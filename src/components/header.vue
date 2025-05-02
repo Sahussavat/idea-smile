@@ -24,55 +24,6 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#service" style="font-family: noto-regular; font-size: 20px;">บริการ</a>
           </li>
-           
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#service" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  โปรแกรมทำฟัน
-                </a>
-                <ul class="dropdown-menu columns-3">
-		            <div class="row">
-			            <div class="col-sm-4">
-                            <div style="margin: 5%;"><h4>ถอนฟัน</h4></div>
-                            <div class="dropdown-divider"></div>
-				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Action</a></li>
-					            <li><a href="#">Another action</a></li>
-					            <li><a href="#">Something else here</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Separated link</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">One more separated link</a></li>
-				            </ul>
-			            </div>
-			            <div class="col-sm-4">
-                            <div style="margin: 5%;"><h4>อุดฟัน</h4></div>
-                            <div class="dropdown-divider"></div>
-				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Action</a></li>
-					            <li><a href="#">Another action</a></li>
-					            <li><a href="#">Something else here</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Separated link</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">One more separated link</a></li>
-				            </ul>
-			            </div>
-			            <div class="col-sm-4">
-                            <div style="margin: 5%;"><h4>เปลี่ยนฟัน</h4></div>
-                            <div class="dropdown-divider"></div>
-				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Action</a></li>
-					            <li><a href="#">Another action</a></li>
-					            <li><a href="#">Something else here</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Separated link</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">One more separated link</a></li>
-				            </ul>
-			            </div>
-		            </div>
-	            </ul>
-              </li> -->
             
           
           <li class="nav-item">
@@ -81,9 +32,6 @@
           <li class="nav-item">
             <a class="nav-link" style="font-family: noto-regular; font-size: 20px;" href="#map">พิกัดคลินิก</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#footer">ติดต่อเรา</a>
-          </li> -->
         </ul>
         <!-- Left links -->
       </div>
