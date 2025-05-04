@@ -1,13 +1,33 @@
 <script setup>
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import '@splidejs/vue-splide/css';
-import { event } from 'jquery';
 </script>
 
 <template>
   <div style="background-color: #FAF1E6; height: fit-content;">
     <br>
-    <div class="wrapper" style='margin-left: 10%; margin-right: 10%;' v-if="items.length > 0">
+    <div class="wrapper" style='margin-left: 5%; margin-right: 5%;' v-for="(item, index) in items">
+    <div class="row row-cols-1 row-cols-sm-2">
+      <div class="col" align="center">
+        <div style="margin: 2%; height: 100%;">
+        <div class="shadow" style="padding: 2%; background-color: #FDFAF6;">
+          <div style="margin:5%;">
+          <p style="font-family: noto; font-size: 45px; color: #393E46;">{{ item.title }}</p>
+          <p style="white-space: pre; font-family: noto-regular; font-size: 25px; color: #393E46;">{{ item.description }}</p>
+          
+          <br>
+          <div align="center">
+          <a :href=item.info_link target="_blank" class="btn btn-light loaded" style="display: none; font-family: noto-regular;
+          color:#3674B5; margin-left: 30%; margin-right: 30%;">อ่านเพิ่มเติม..</a>
+          </div>
+          <br>
+          </div>
+        </div>  
+        </div>
+    </div>
+      <div class="col">
+        <div style="margin: 2%;">
+        <div class="shadow" style="padding: 2%; background-color: #FDFAF6;">
       <Splide
         aria-labelledby="thumbnail-example-heading"
         :options=" {
@@ -20,15 +40,16 @@ import { event } from 'jquery';
         }"
         ref="main"
       >
-        <SplideSlide align="center" v-for="pic_link in items[0].pic_link_arr" :key="index">
-          <img :src="pic_link" alt="..." class="shadow rounded splide-main-img">
+        <SplideSlide align="center" v-for="pic_link in item.pic_link_arr" :key="index">
+          <div class="loading" align="center">
+          <div class="spinner-grow" role="status" style="margin: 20%;">
+            <span class="visually-hidden">Loading...</span>
+          </div></div>
+          <img :src="pic_link" alt="..." class="shadow rounded splide-main-img loaded" style="display: none;">
         </SplideSlide>
       </Splide>
-        <br>
-        <a :href=items[0].info_link target="_blank" class="btn btn-light loaded" style="display: none; font-family: noto-regular;
-         color:#3674B5; margin-left: 30%; margin-right: 30%;">อ่านเพิ่มเติม..</a>
-        <br>
-      <Splide
+      <br>
+        <Splide
         aria-label="The carousel with thumbnails. Selecting a thumbnail will change the main carousel"
         :options="{
           type        : 'slide',
@@ -40,6 +61,14 @@ import { event } from 'jquery';
           isNavigation: true,
           arrows    : false,
           updateOnMove: true,
+          grid       : {
+            // You can define rows/cols instead of dimensions.
+            dimensions: [ [ 2, 2 ] ],
+            gap: {
+              row: '6px',
+              col: '6px',
+            },
+          },
           breakpoints: {
             600: {
               perPage: 3,
@@ -52,10 +81,20 @@ import { event } from 'jquery';
         }"
         ref="thumbs"
       >
-        <SplideSlide align="center" v-for="pic_link in items[0].pic_link_arr" :key="index">
-          <img :src="pic_link" alt="..." class="shadow rounded" style="width: 70%;">
+        <SplideSlide align="center" v-for="pic_link in item.pic_link_arr" :key="index">
+          <div class="loading" align="center">
+          <div class="spinner-grow" role="status" style="margin: 20%;">
+            <span class="visually-hidden">Loading...</span>
+          </div></div>
+          <img :src="pic_link" alt="..." class="shadow rounded loaded" style="width: 100%; display: none;">
         </SplideSlide>
       </Splide>
+      </div>
+    </div>
+      </div>
+    </div>
+      <br>
+      <hr class="hr" v-if="index < items.length - 1" />
     </div>
     <br>
   </div>
@@ -71,7 +110,7 @@ import { event } from 'jquery';
 
 @media only screen and (min-width: 992px) {
   .splide-main-img {
-    width: 40%;
+    width: 60%;
   }
 
 }
@@ -84,20 +123,17 @@ export default {
   data() {
     let _items = []
     for(let i=0;i<20;i++){
-      _items.push({})
+      var temp_blank = []
+      for(let j=0;j<10;j++){
+        temp_blank.push("")
+      }
+      _items.push({
+        pic_link_arr: temp_blank
+      })
     }
+    
     return {
-      items: [{
-        pic_link_arr:[
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000",
-            "https://drive.google.com/thumbnail?id=1m_cW5YQBOY3U8ZVzLUTy_Kwgh-R1ojEU&sz=w1000"
-        ]
-      }],
+      items: _items,
     }
   },
   mounted(){
@@ -116,11 +152,18 @@ export default {
             var pic_id = item_pic_link.split("https://drive.google.com/file/d/")[1].split("/view?usp=sharing")[0]
             item.pic_link_arr.push(pic_link_pattern.replace("[pic_id]", pic_id))
         }
-        const thumbsSplide = this.$refs.thumbs.splide;
-
-        if ( thumbsSplide ) {
-            this.$refs.main.splide.sync( thumbsSplide );
-        }
+        this.$nextTick(
+          function () {
+            if(this.$refs['thumbs']){
+              for(var i=0;i<this.$refs['thumbs'].length;i++){
+                const thumbsSplide = this.$refs['thumbs'][i].splide;
+                if ( thumbsSplide ) {
+                    this.$refs['main'][i].splide.sync( thumbsSplide );
+                }
+              }
+            }
+        }.bind(this)
+      );
       }
     })
   },

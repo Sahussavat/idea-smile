@@ -53,22 +53,6 @@ const slides = [
   <Album></Album>
 </template>
 
-<style>
-@media only screen and (max-width: 600px) {
-  .splide-main-img {
-    width: 90%;
-  }
-
-}
-
-@media only screen and (min-width: 992px) {
-  .splide-main-img {
-    width: 40%;
-  }
-
-}
-</style>
-
 <script>
 import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 
@@ -98,7 +82,7 @@ export default {
         this.array_l_ing[index].style.display = "none"
       }
       for(let index in this.array_l){
-        this.array_l[index].style.display = "block"
+        this.array_l[index].style.display = "inline-block"
       }
     })
 

@@ -24,8 +24,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#service" style="font-family: noto-regular; font-size: 20px;">บริการ</a>
           </li>
-            
-          
+          <li class="nav-item">
+            <a href="#videoes" class="nav-link" style="font-family: noto-regular; font-size: 20px;">สาระน่ารู้</a>
+          </li>
           <li class="nav-item">
             <a href="#doctors" class="nav-link" style="font-family: noto-regular; font-size: 20px;">คุณหมอ</a>
           </li>
