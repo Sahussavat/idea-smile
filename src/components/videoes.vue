@@ -7,7 +7,7 @@
         <div class="shadow" style="padding: 2%; background-color: #FDFAF6;">
           <div style="margin:5%;">
           <p style="font-family: noto; font-size: 45px; color: #393E46;">{{item.video_title}}</p>
-          <p style="white-space: pre; font-family: noto-regular; font-size: 25px; color: #393E46;">{{ item.video_description }}</p>
+          <p style="white-space: pre-wrap; font-family: noto-regular; font-size: 25px; color: #393E46;">{{ item.video_description }}</p>
           
           <br>
           <div align="center">

@@ -94,7 +94,7 @@ import Map from "./map.vue"
 <style>
 @media only screen and (max-width: 600px) {
   .title-name {
-    font-size: 50px;
+    font-size: 45px;
   }
 
 }
